@@ -12,3 +12,9 @@ _configurator:
 
 _main:
     resource: routing.yml
+
+#### JUST FOR TESTING ####
+p1r0_test:
+    resource: "@p1r0TestBundle/Controller/"
+    type:     annotation
+    prefix:   /
