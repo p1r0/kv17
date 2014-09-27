@@ -1,0 +1,77 @@
+{% block form_row %}
+    {% spaceless %}
+        <div class="form-group {% if errors %}has-error{% endif %}">
+            {{ form_label(form, null,  {'label_attr': {'class': 'control-label'}}) }}
+            <div class="controls">
+                {{ form_widget(form, {'attr': {'class': 'form-control focused'}}) }}
+            </div>
+            {% if attr['help'] is defined and not errors %}
+                <p class="help-block">{{ attr['help'] }}</p>
+            {% elseif errors %}
+                {% block form_errors %}
+                    {% spaceless %}
+                        {% if errors|length > 0 %}
+                            <p class="help-block">
+                                {% for error in errors %}
+                                    {{ error.message }}
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                    {% endspaceless %}
+                {% endblock form_errors %}
+            {% endif %}
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+{% block form_widget_compound -%}
+    <div {{ block('widget_container_attributes') }}>
+        {%- if form.parent is empty -%}
+            {{ form_errors(form) }}
+        {%- endif -%}
+        {{- block('form_rows') -}}
+        {{- form_rest(form) -}}
+    </div>
+{%- endblock form_widget_compound %}
+
+{% block form_start -%}
+    {% set method = method|upper %}
+    {%- if method in ["GET", "POST"] -%}
+        {% set form_method = method %}
+    {%- else -%}
+        {% set form_method = "POST" %}
+    {%- endif -%}
+    <form role="form" name="{{ form.vars.name }}" method="{{ form_method|lower }}" action="{{ action }}"{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %}>
+        <div class="box-body">
+    {%- if form_method != method -%}
+        <input type="hidden" name="_method" value="{{ method }}" />
+    {%- endif -%}
+{%- endblock form_start %}
+
+{% block form_end -%}
+    {% if not render_rest is defined or render_rest %}
+        {{- form_rest(form) -}}
+    {% endif -%}
+        </div><!-- box-body -->
+    </form>
+{%- endblock form_end %}
+
+{% block button_row -%}
+    <div class="box-footer">
+        {{- form_widget(form) -}}
+    </div>
+{%- endblock button_row %}
+
+{% block submit_widget -%}
+    {% set type = type|default('submit') %}
+    {% set class = attr.class|default('btn btn-primary') %}
+    {% set attr = attr|merge({'class':class}) %}
+    {{- block('button_widget') -}}
+{%- endblock submit_widget %}
+
+{% block reset_widget -%}
+    {% set type = type|default('reset') %}
+    {% set class = attr.class|default('btn btn-danger') %}
+    {% set attr = attr|merge({'class':class}) %}
+    {{- block('button_widget') -}}
+{%- endblock reset_widget %}
