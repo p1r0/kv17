@@ -11,3 +11,4 @@
 /composer.phar
 .idea
 packages.json
+composer.lock
