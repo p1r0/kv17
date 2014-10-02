@@ -4,7 +4,7 @@
     "type": "project",
     "description": "Synfony 2 Admin Base Project",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "p1r0\\": "src/" }
     },
     "require": {
         "php": ">=5.3.3",
