@@ -1,0 +1,15 @@
+{
+    "name": "p1r0/kv17-adminuser-bundle",
+    "license": "MIT",
+    "type": "library",
+    "description": "KV17 Admin User Bundle",
+    "target-dir": "p1r0/AdminUserBundle",
+    "autoload": {
+        "psr-0": {"p1r0\\AdminUserBundle\\": ""}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
+        }
+    }
+}
