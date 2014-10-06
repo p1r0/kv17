@@ -1,0 +1,15 @@
+{
+    "name": "p1r0/kv17-tpl-lte",
+    "license": "MIT",
+    "type": "library",
+    "description": "KV17 LTE Template Bundle",
+    "target-dir": "p1r0/Tpls/AdminLTEBundle",
+    "autoload": {
+        "psr-0": {"p1r0\\Tpls\\AdminLTEBundle\\": ""}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
+        }
+    }
+}
