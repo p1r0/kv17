@@ -1,0 +1,5 @@
+services:
+  acme_other.configure_menu_listener:
+    class: p1r0\TestBundle\EventListener\ConfigureMenuListener
+    tags:
+      - { name: kernel.event_listener, event: p1r0_adminlte.menu_configure, method: onMenuConfigure }

@@ -1,13 +1,14 @@
-<ul class="sidebar-menu">
-    <li class="active">
-        <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-        </a>
-    </li>
+{{ knp_menu_render('p1r0TplsAdminLTEBundle:MainBuilder:build', {'template':'p1r0TplsAdminLTEBundle:Menu:knp_menu.html.twig','allow_safe_labels': true}) }}
+{#<ul class="sidebar-menu">#}
+    {#<li class="active">#}
+        {#<a href="#">#}
+            {#<i class="fa fa-dashboard"></i> <span>Dashboard</span>#}
+        {#</a>#}
+    {#</li>#}
 
-    <li>
-        <a href="{{ path("fos_user_security_logout") }}">
-            <i class="fa fa-sign-out"></i> <span>Logout</span>
-        </a>
-    </li>
-</ul>
+    {#<li>#}
+        {#<a href="{{ path("fos_user_security_logout") }}">#}
+            {#<i class="fa fa-sign-out"></i> <span>Logout</span>#}
+        {#</a>#}
+    {#</li>#}
+{#</ul>#}
