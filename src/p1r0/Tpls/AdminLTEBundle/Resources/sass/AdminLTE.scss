@@ -19,3 +19,17 @@ ul.actions{
         }
     }
 }
+
+ul.record_actions{
+    padding: 0;
+
+    li{
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
