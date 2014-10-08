@@ -12,3 +12,4 @@
 .idea
 packages.json
 composer.lock
+.sass-cache

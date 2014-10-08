@@ -1,0 +1,21 @@
+@import "compass/css3";
+
+@import "adminBase";
+
+.toolbar{
+    margin-left: 10px;
+}
+
+ul.actions{
+    padding: 0;
+
+    li{
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
