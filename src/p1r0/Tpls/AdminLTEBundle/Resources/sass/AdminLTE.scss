@@ -33,3 +33,12 @@ ul.record_actions{
         }
     }
 }
+
+.flash-message{
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    margin-left: -35%;
+    margin-top: 25px;
+    z-index: 10000;
+}
