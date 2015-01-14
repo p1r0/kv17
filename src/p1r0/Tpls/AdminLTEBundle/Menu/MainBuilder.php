@@ -22,7 +22,9 @@ class MainBuilder extends ContainerAware
 
         $this->container->get('event_dispatcher')->dispatch(ConfigureMenuEvent::CONFIGURE, new ConfigureMenuEvent($factory, $menu));
 
-        $menu->addChild('Logout', array('route' => 'fos_user_security_logout', 'label'=>'<i class="fa fa-sign-out"></i> <span>Logout</span>', 'extras'=>array('safe_label'=>true)));
+        $label = $this->container->get('translator')->trans("Logout", [], "admin");
+
+        $menu->addChild('Logout', array('route' => 'fos_user_security_logout', 'label'=>'<i class="fa fa-sign-out"></i> <span>'.$label.'</span>', 'extras'=>array('safe_label'=>true)));
 
         return $menu;
     }
