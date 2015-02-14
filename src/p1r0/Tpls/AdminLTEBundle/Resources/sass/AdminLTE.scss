@@ -2,6 +2,10 @@
 
 @import "adminBase";
 
+body > .header .logo {
+    font-family: 'Raleway', sans-serif;
+}
+
 .toolbar{
     margin-left: 10px;
 }
